@@ -79,7 +79,7 @@ boolean DS1307::check24Hour() {
     
     Wire.requestFrom(DS1307_ADDR, 1);
     temp = Wire.receive();
-    return ( temp | (0 << DS1307_24HR) ? true : false ) ; 
+    return ( !(temp & (1 << DS1307_MODE)) ? true : false ) ; 
 }
 
 void DS1307::setup() {
@@ -99,7 +99,7 @@ void DS1307::setup() {
 void DS1307::set24(void) {
     Wire.beginTransmission(DS1307_ADDR);
     Wire.send(0x02);
-    Wire.send(0 << DS1307_24HR);
+    Wire.send(0x00);
     Wire.endTransmission();
 }
 
