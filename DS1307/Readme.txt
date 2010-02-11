@@ -101,6 +101,12 @@ If you want to change between 12 and 24 hour time, which requires the hour to
 be reset, there are two functions to do that:
     RTC.set24();
     RTC.set12();
+I've noticed sometimes these functions don't work properly. I've found that
+the easiest way to set 24 hour time is simply to write a 24 hour time value
+to the RTC - make sure you set up the RTC with twentyfourhour = true and then
+write the hour to the clock. The software will take care of the rest. This
+is an issue I'm tracking and actively working on; as of yet it doesn't affect
+the basic functionality.
 
 As was mentioned in the introduction, I don't personally use 12-hour time, so
 support in the library as of the time of this writing is sketchy at best. I
