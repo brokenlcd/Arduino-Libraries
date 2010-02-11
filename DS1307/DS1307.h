@@ -16,7 +16,7 @@
 
 
 
-#define    DS1307_ADDR     104
+#define    DS1307_ADDR     0x68
 #define    DS1307CH        0x07
 #define    DS1307_SEC      0x7F
 #define    DS1307_MODE     0x06
