@@ -116,3 +116,4 @@ number in either format, you can use the following functions appropriately:
 
 If you have any questions or comments about the code (feedback is welcome),
 send an email to brokenlcd@gmail.com or isomk@kyleisom.net.
+
