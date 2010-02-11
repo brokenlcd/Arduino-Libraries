@@ -43,8 +43,8 @@
         void getDTC(byte *seconds, byte *minute, byte *hour, byte *weekday, byte *day, byte *month, byte *year);
         
         /* write functions */
-        void enableRTC(void);
-        void disableRTC(void);
+        void enableClock(void);
+        void disableClock(void);
         void set24(void);
         void set12(void);
         void setup(void);
@@ -53,6 +53,7 @@
         void setDate(byte *day, byte *month, byte *year);
         void setDayOfWeek(byte *weekday);
         void setDTC(byte *seconds, byte *minute, byte *hour, byte *weekday, byte *day, byte *month, byte *year);
+        void setDTC(byte *seconds, byte *minute, byte *hour, byte *day, byte *month, byte *year);
         
         /* conversion functions */
         byte bcd_to_dec(byte data);

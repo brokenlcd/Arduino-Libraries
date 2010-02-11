@@ -18,14 +18,14 @@ DS1307::DS1307(boolean singleDevice, boolean twentyfourhour) {
 }
 
 
-void DS1307::enableRTC() {
+void DS1307::enableClock() {
     Wire.beginTransmission(DS1307_ADDR);
     Wire.send(0x00);
     Wire.send( 0 << DS1307CH );
     Wire.endTransmission();
 }
 
-void DS1307::disableRTC() {
+void DS1307::disableClock() {
     Wire.beginTransmission(DS1307_ADDR);
     Wire.send(0x00);
     Wire.send( 1 << DS1307CH );
@@ -83,6 +83,7 @@ boolean DS1307::check24Hour() {
 }
 
 void DS1307::setup() {
+    if (!isEnabled()) { enableClock(); }
     if  ( (twentyfour == true) && (check24Hour() == false) ) { 
         set24();
         return;
@@ -135,11 +136,18 @@ void DS1307::setDTC(byte *seconds, byte *minute, byte *hour, byte *weekday, byte
     setDate(day, month, year);
 }
 
+void DS1307::setDTC(byte *seconds, byte *minute, byte *hour, byte *day, byte *month, byte *year) {
+    setTime(seconds, minute, hour);
+    setDate(day, month, year);
+}
+
+
 void DS1307::getDTC(byte *AMPM, byte *seconds, byte *minute, byte *hour, byte *weekday, byte *day, byte *month, byte *year) {
     getTime(AMPM, seconds, minute, hour);
     dayOfWeek(weekday);
     getDate(day, month, year);
 }
+
 
 void DS1307::getDTC(byte *seconds, byte *minute, byte *hour, byte *weekday, byte *day, byte *month, byte *year) { 
     getDTC(NULL, seconds, minute, hour, weekday, day, month, year); 
