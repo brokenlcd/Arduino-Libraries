@@ -27,8 +27,11 @@ class AT24C128 {
         /*******************
          * WRITE FUNCTIONS *
          *******************/
-         byteWrite(byte word0, byte word1, byte data);
-         pageWrite(
+//         byteWrite(byte word0, byte word1, byte data);
+         
+        /******************
+         * READ FUNCTIONS *
+         ******************/
     
     private:
         byte A0;
