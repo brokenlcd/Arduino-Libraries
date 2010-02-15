@@ -4,6 +4,8 @@
  *
  * Arduino library to abstract use of the thumb joystick sold on Sparkfun.
  * The vertical and horizontal axis are indicated on the breakout board.
+ *
+ * Released under a BSD license. The full header is available in the header.
  */
 
 

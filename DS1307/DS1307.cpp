@@ -6,6 +6,8 @@
  * I2C address is hardcoded as 110100 - the data sheet implicitly states
  * that only one DS1307 can be on the bus. I was inspired by some of the
  * code at http://www.glacialwanderer.com/hobbyrobotics/?p=12
+ *
+ * Released under a BSD license. The full license is available in the header.
  */
 
 #include "Wire.h"
